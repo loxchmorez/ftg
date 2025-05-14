@@ -110,7 +110,7 @@ class CryptoChartMod(loader.Module):
 
             text = f"**{base}/{quote}**\nЦена: `{price:.2f} {quote}`"
 
-            await self.client.send_file(message.chat_id, chart, caption=text, reply_to=message.id)
+            await self.client.send_file(message.chat_id, chart, caption=text, reply_to=message.id, parse_mode="md")
             await message.delete()
         except Exception as e:
             await message.edit(f"Ошибка: {e}")

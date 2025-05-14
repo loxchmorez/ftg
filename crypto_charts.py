@@ -108,8 +108,7 @@ class CryptoChartMod(loader.Module):
                 rate = self.get_fiat_rate("USD", quote)
                 price *= rate
 
-            text = f"**{base}/{quote}**
-Цена: `{price:.2f} {quote}`"
+            text = f"**{base}/{quote}**\nЦена: `{price:.2f} {quote}`"
 
             await self.client.send_file(message.chat_id, chart, caption=text, reply_to=message.id)
             await message.delete()
